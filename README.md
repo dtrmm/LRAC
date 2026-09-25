@@ -121,7 +121,7 @@ node LRAC.mjs "Jimi.gp" out 0 1.5 "Jimi.mp3"
 2. Убедиться, что у вас есть close-карточка "Generation close card.txt" c 3 полями — Text; Back Extra; Overlapping
 3. Открыть окно создание карточки, выбрать close-карточку
 4. Нажать "ctrl + shift + x"
-5. Вставить в front карточки текст из "_close.txt" как код
+5. Вставить в поле "Text" карточки текст из "_close.txt" как код
 6. Ввести в "Overlaping" значение "1, 0, false"
 7. Нажать создать карточку
 
