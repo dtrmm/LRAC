@@ -1,3 +1,5 @@
+## Front Template
+```html
 <div id="cloze-original" hidden="">{{Text}}</div>
 <div id="cloze-anki-rendered" hidden="">{{cloze:Text}}</div>
 <div id="cloze-overlapping-config" hidden="">{{Overlapping}}</div>
@@ -98,3 +100,57 @@
     observer.observe(document.body, { attributes: true });
   })();
 </script>
+```
+## Back Template
+```html
+<div id="cloze-is-back" hidden="">{{cloze:Text}}</div>
+{{FrontSide}}
+{{Back Extra}}
+```
+## Styling
+```css
+.card {
+    font-family: arial;
+    font-size: 20px;
+    text-align: left;
+    color: black;
+    background-color: white;
+}
+.cloze {
+    font-weight: bold;
+    color: blue;
+}
+.nightMode .cloze {
+    color: lightblue;
+}
+
+img {
+  width: 325px;         /* Задайте нужную ширину */
+  height: 300px;        /* Задайте нужную высоту */
+  object-fit: contain;  /* Вписывает картинку целиком без обрезки */
+  background-color: #f0f0f0; /* Необязательно: цвет фона для пустых полей */
+	display: block;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  height: 100vh;                 /* вся высота окна */
+  display: flex;
+  flex-direction: column;        /* элементы идут сверху вниз */
+  align-items: center;           /* центрирование по горизонтали */
+
+}
+
+/* Ограничиваем ширину всех прямых потомков карточки */
+.card > * {
+  max-width: 650px;              /* нужная тебе ширина */
+  width: 100%;                   /* занимают всю доступную ширину до max-width */
+  box-sizing: border-box;        /* чтобы padding не вылезал за границы */
+  padding: 10px;                 /* небольшие поля для текста (по желанию) */
+}
+```
