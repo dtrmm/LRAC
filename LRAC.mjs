@@ -1,4 +1,4 @@
-// split_measures.mjs  — v5 (full-render crop + TAB only, multi-track)
+// LRAC.mjs  — v5 (full-render crop + TAB only, multi-track)
 //
 // Рендерит .gp3/.gp4/.gp5/.gpx/.gp/.gp7/musicxml — ТОЛЬКО TAB стан.
 // Все эффекты (слайды, бенды, вибрато) берутся из оригинального GP-файла.
@@ -8,13 +8,13 @@
 // Для этого в trackIndex передаётся список через запятую: "0,1" —
 // порядок в списке = порядок сверху вниз (первый индекс — верхняя дорожка).
 //
-// node split_measures.mjs <song.gp5> [outDir] [trackIndex=0] [scale=1.5] [mp3Path]
+// node LRAC_measures.mjs <song.gp5> [outDir] [trackIndex=0] [scale=1.5] [mp3Path]
 //
 // Примеры:
-//   node split_measures.mjs song.gp5                  # только дорожка 0
-//   node split_measures.mjs song.gp5 out 2             # только дорожка 2
-//   node split_measures.mjs song.gp5 out 0,1           # дорожка 0 сверху, дорожка 1 снизу
-//   node split_measures.mjs song.gp5 out 1,0 1.5 mp3   # дорожка 1 сверху, дорожка 0 снизу + mp3
+//   node LRAC.mjs song.gp5                  # только дорожка 0
+//   node LRAC.mjs song.gp5 out 2             # только дорожка 2
+//   node LRAC.mjs song.gp5 out 0,1           # дорожка 0 сверху, дорожка 1 снизу
+//   node LRAC.mjs song.gp5 out 1,0 1.5 mp3   # дорожка 1 сверху, дорожка 0 снизу + mp3
 
 import * as alphaTab from '@coderline/alphatab';
 import * as alphaSkia from '@coderline/alphaskia';
@@ -38,7 +38,7 @@ const scale      = Number(process.argv[5] ?? 1.5);
 const mp3Path    = process.argv[6] || null;
 
 if (!inputPath) {
-  console.error('Использование: node split_measures.mjs <song.gp5> [outDir] [trackIndex(es)=0] [scale=1.5] [mp3Path]');
+  console.error('Использование: node LRAC.mjs <song.gp5> [outDir] [trackIndex(es)=0] [scale=1.5] [mp3Path]');
   console.error('  trackIndex(es): одна дорожка "0" или две через запятую "0,1" (первая — сверху, вторая — снизу)');
   process.exit(1);
 }
