@@ -1,4 +1,4 @@
-# gp-to-anki-measures
+# Learning Riffs Anki Script
 
 Берёт файл партитуры (.gp3 / .gp4 / .gp5 / .gpx / .gp / .gp7 / .musicxml)
 и создаёт PNG-карточки по одному такту, сразу в формате cloze для Anki.
@@ -61,7 +61,7 @@ node split_measures.mjs song.gp5 out 1,0
    [1] Vocal
 ```
 
-По умолчанию (без запятой) рендерится только одна дорожка, как раньше.
+По умолчанию (без запятой) рендерится только одна дорожка.
 
 **Если нижняя дорожка обрезается и не влезает в карточку** — увеличь константу
 `BOT_PAD` в `split_measures.mjs` (раздел «7. Нарезка тактов», по умолчанию `14`).
@@ -81,11 +81,6 @@ PNG + нарезка MP3:
 ```bash
 node split_measures.mjs "Cliffs of Dover.gp5" out 0 1.5 "Cliffs of Dover.mp3"
 node split_measures.mjs "Jimi.gp" out 0 1.5 "Jimi.mp3"
-```
-
-Проверить без своего файла (тестовая партитура):
-```bash
-node split_measures.mjs sample.tex
 ```
 
 ## Что получится в `outDir/`
@@ -121,10 +116,3 @@ node split_measures.mjs sample.tex
 Если в произведении меняются темп или тактовый размер — скрипт учитывает это автоматически.
 
 ## Дополнительные дорожки
-
-Для многоинструментального файла запусти несколько раз с разными `trackIndex`:
-
-```bash
-node split_measures.mjs song.gp5 out_guitar 0   # гитара
-node split_measures.mjs song.gp5 out_bass   1   # бас
-```
