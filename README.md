@@ -1,4 +1,4 @@
-# Learning Riffs Anki Script
+# Learning Riffs Anki CScript
 
 Берёт файл партитуры (.gp3 / .gp4 / .gp5 / .gpx / .gp / .gp7 / .musicxml)
 и создаёт PNG-карточки по одному такту, сразу в формате cloze для Anki.
