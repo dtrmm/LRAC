@@ -18,7 +18,7 @@
 npm install
 ```
 
-Нативный рендер-движок (alphaSkia) ставится автоматически под твою ОС.
+Нативный рендер-движок (alphaSkia) ставится автоматически под вашу ОС.
 Для нарезки MP3 нужен **ffmpeg** (на macOS: `brew install ffmpeg`,
 на Ubuntu: `apt install ffmpeg`).
 
