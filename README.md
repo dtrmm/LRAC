@@ -25,7 +25,7 @@ npm install
 ## Использование
 
 ```bash
-node split_measures.mjs <файл> [outDir] [trackIndex(es)] [scale] [mp3]
+node LRAC.mjs <файл> [outDir] [trackIndex(es)] [scale] [mp3]
 ```
 
 | Аргумент        | По умолчанию | Описание |
@@ -47,10 +47,10 @@ node split_measures.mjs <файл> [outDir] [trackIndex(es)] [scale] [mp3]
 
 ```bash
 # Дорожка 0 сверху (гитара), дорожка 1 снизу (вокал)
-node split_measures.mjs song.gp5 out 0,1
+node LRAC.mjs song.gp5 out 0,1
 
 # Порядок можно поменять местами
-node split_measures.mjs song.gp5 out 1,0
+node LRAC.mjs song.gp5 out 1,0
 ```
 
 Скрипт при запуске всегда печатает список дорожек в файле с их номерами:
@@ -64,7 +64,7 @@ node split_measures.mjs song.gp5 out 1,0
 По умолчанию (без запятой) рендерится только одна дорожка.
 
 **Если нижняя дорожка обрезается и не влезает в карточку** — увеличь константу
-`BOT_PAD` в `split_measures.mjs` (раздел «7. Нарезка тактов», по умолчанию `14`).
+`BOT_PAD` в `LRAC.mjs` (раздел «7. Нарезка тактов», по умолчанию `14`).
 Если, наоборот, обрезается что-то сверху (например, темп/заголовок) — увеличь
 `TOP_PAD` (там же, по умолчанию `Math.round(30 * scale)`). Высота кропа
 подстраивается под обе дорожки автоматически — трогать нужно именно эти
@@ -74,13 +74,13 @@ node split_measures.mjs song.gp5 out 1,0
 
 Только PNG:
 ```bash
-node split_measures.mjs "Cliffs of Dover.gp5"
+node LRAC.mjs "Cliffs of Dover.gp5"
 ```
 
 PNG + нарезка MP3:
 ```bash
-node split_measures.mjs "Cliffs of Dover.gp5" out 0 1.5 "Cliffs of Dover.mp3"
-node split_measures.mjs "Jimi.gp" out 0 1.5 "Jimi.mp3"
+node LRAC.mjs "Cliffs of Dover.gp5" out 0 1.5 "Cliffs of Dover.mp3"
+node LRAC.mjs "Jimi.gp" out 0 1.5 "Jimi.mp3"
 ```
 
 ## Что получится в `outDir/`
